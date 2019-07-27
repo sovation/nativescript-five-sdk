@@ -1,0 +1,19 @@
+<Page class="page"
+    navigatingTo="onNavigatingTo"
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:five="nativescript-five-sdk"
+>
+
+    <ActionBar class="action-bar">
+        <Label class="action-bar-title" text="Five Sdk Sample"></Label>
+    </ActionBar>
+
+		<ScrollView>
+			<StackLayout orientation="vertical" backgroundColor="#ccc">
+				<Label text="Ad 1"></Label>
+				<five:FiveSdk slotId="637037"></five:FiveSdk>
+				<Label text="Ad 2"></Label>
+				<five:FiveSdk slotId="799399"></five:FiveSdk>
+			</StackLayout>
+		</ScrollView>
+</Page>
