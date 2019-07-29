@@ -105,7 +105,7 @@ export class FiveSdk extends FiveSdkBase {
 
     if (!FiveAd.isInitialized()) {
       FiveAd.initialize(application.android.context, config)
-      console.log('Five Sdk initialized done')
+      console.log('Five Sdk initialized successfully')
     }
   }
 
@@ -132,26 +132,26 @@ export class FiveSdk extends FiveSdkBase {
     }
   }
 
+  /**
+   * 広告Viewの初期化
+   * @param loadAd 初期化と同時に広告も読み込むか
+   */
   initAdView (loadAd: boolean) {
-    console.log('init ad view start')
-    // 広告Viewの初期化
     this.disposeAdView()
 
-    this.adView = new FiveAdCustomLayout(this._context, this.slotId, this.slotWidth)
+    this.adView = new FiveAdCustomLayout(this._context, String(this.slotId), this.slotWidth)
     this.adView.setListener(adListener);
-    (this.adView as any).owner = this
+    (this.adView as any).owner = this // リスナーから発生したViewを取得できるように
 
     if (loadAd) {
       this.adView.loadAdAsync()
     }
-    console.log('init ad view done')
   }
 
   /**
    * FiveAd の読み込み時
    */
   onFiveAdLoad (): void {
-    console.log('five ad load event fired')
     this.nativeView.addView(this.adView as any)
   }
 

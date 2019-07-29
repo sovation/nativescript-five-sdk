@@ -4,6 +4,8 @@
 
 NativeScript 5.4 above.
 
+Currently iOS is NOT SUPPORTED.
+
 ## Installation
 
 
